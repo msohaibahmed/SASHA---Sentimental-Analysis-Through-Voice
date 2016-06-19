@@ -1,0 +1,23 @@
+print(__doc__)
+
+import numpy as np
+import matplotlib.pyplot as plt
+import cPickle
+from sklearn import svm, datasets
+from sklearn.cross_validation import train_test_split
+from sklearn.metrics import confusion_matrix
+from keras.utils import np_utils
+import os
+import scipy as sc
+from scipy.io.wavfile import read
+import scipy.signal
+
+class_list1=[1]*45+15
+class_list2=[0]*285+105
+y=class_list1+class_list2
+
+out_file = open("./label.pkl", 'w+')
+dic = {'labels':y}
+cPickle.dump(dic, out_file)
+out_file.close()
+
